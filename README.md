@@ -6,3 +6,5 @@ firstCommit
 secondCommit
 
 atsushima commit
+
+configChange
