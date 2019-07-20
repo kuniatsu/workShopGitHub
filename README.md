@@ -27,7 +27,7 @@ $ git --version
 
 
 
-### **~GitHubのアカウント作成~**  
+### **GitHubのアカウント作成**  
 [GitHub](https://github.com/login)   にアクセス  
 `New to GitHub? Create an account.` をクリック   
 必要項目を入力して完成。   
@@ -183,7 +183,7 @@ $ git checkout `branch名`
 
 ## *Lesson9*  
 
-### **~プルリクを出そう~** 
+### **プルリクを出そう** 
 GitHubの画面からPullRequestをだす
 
 
