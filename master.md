@@ -1,1 +1,1 @@
-masterだよ
+2get
