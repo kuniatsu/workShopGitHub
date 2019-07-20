@@ -1,9 +1,8 @@
 # GitHub講座
 
 
-## *Lesson0*  
+## *Lesson0 Gitをinstallする*  
 
-### **~ Gitをinstallする ~**
 **Windows**  
 `git bash`を使っていくと便利です。  
 [【初心者向け】Gitのインストール方法](https://eng-entrance.com/git-install)  
@@ -36,9 +35,7 @@ $ git --version
 ---
 
 
-## *Lesson1*  
-
-### **~GitHubからRepositoriesをClone~** 
+## *Lesson1 GitHubからRepositoriesをClone*  
 
 **講座用のRepositoriesをCloneしよう**  
 [講座のテキストページ](https://github.com/kuniatsu/workShop) から自分のbranchのURLを調べる
@@ -50,11 +47,8 @@ $ git clone `URL`
 ---
 
 
-## *Lesson2*  
+## *Lesson2 Repositoriesの状態を確認*  
 
-### **~Repositoriesの状態を確認~** 
-
-**ソースの差分がないことを確認しよう**  
 ```
 $ git diff
 ```
@@ -74,9 +68,7 @@ $ git status
 ---
 
 
-## *Lesson3*  
-
-### **~LocalのRepositoriesに変更を反映させる~** 
+## *Lesson3 LocalのRepositoriesに変更を反映させる*  
 
 **新しいファイルを反映の対象しよう**  
 ```
@@ -101,9 +93,7 @@ $ git log
 ---
 
 
-## *Lesson4*  
-
-### **~rollbackさせる~** 
+## *Lesson4 変更を元に戻す*  
 
 **ファイルを編集して新しい差分を作ろう**  
 ```
@@ -130,9 +120,7 @@ $ git log
 ---
 
 
-## *Lesson5*  
-
-### **~GitHubの設定する~** 
+## *Lesson5 GitHubの設定する*  
 
 **ユーザ名・アドレス・URLを確認する**  
 ```
@@ -151,9 +139,7 @@ $ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHu
 ---
 
 
-## *Lesson6*  
-
-### **~remoteのRepositoriesに変更を反映させる~** 
+## *Lesson6　remoteのRepositoriesに変更を反映させる*  
 
 **新しいファイルを反映の対象しよう**  
 ```
@@ -163,9 +149,8 @@ $ git push
 ---
 
 
-## *Lesson7*  
+## *Lesson7　新しいbranchを作る*  
 
-### **~新しいbranchを作る~** 
 GitHubの画面からbranchを作成する
 
 **Localのbranchを確認しよう**  
@@ -186,9 +171,12 @@ $ git branch -a
 ---
 
 
-## *Lesson8*  
+## *Lesson8 新しいbranchに切り替えよう*  
 
-### **~新しいbranchに切り替えよう~** 
+```
+$ git checkout `branch名`
+```
+
 
 ---
 
@@ -196,6 +184,6 @@ $ git branch -a
 ## *Lesson9*  
 
 ### **~プルリクを出そう~** 
-
+GitHubの画面からPullRequestをだす
 
 
