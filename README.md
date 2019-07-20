@@ -3,7 +3,7 @@
 
 ## *Lesson0*  
 
-### **~Gitをinstallする~**
+### **~ Gitをinstallする ~**
 **Windows**  
 `git bash`を使っていくと便利です。  
 [【初心者向け】Gitのインストール方法](https://eng-entrance.com/git-install)  
