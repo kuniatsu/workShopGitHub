@@ -22,7 +22,8 @@ $ brew install git
 $ git --version
 ```
 をコマンド
-
+`git version 0.00.0`
+というようにバー
 
 
 
@@ -45,13 +46,24 @@ $ git clone `URL`
 
 
 ---
+## *Lesson2 branchを切り替える*  
 
-
-## *Lesson2 Repositoriesの状態を確認*  
-
+**Localのbranchを確認しよう**  
 ```
-$ git diff
+$ git branch
+$ git branch -a
 ```
+
+**branchを変更しよう**  
+```
+$ git checkout `branch名`
+$ git branch
+```
+
+---
+
+
+## *Lesson3 Repositoriesの状態を確認*  
 
 **差分のあるファイルがないことを確認しよう**  
 ```
@@ -60,15 +72,21 @@ $ git status
 
 **新しくファイルを追加して変化をみよう**  
 ```
+$ git status
+```
+
+**作ったファイルを編集して変化をみよう**  
+```
 $ git diff
 $ git status
 ```
 
 
+
 ---
 
 
-## *Lesson3 LocalのRepositoriesに変更を反映させる*  
+## *Lesson4 LocalのRepositoriesに変更を反映させる*  
 
 **新しいファイルを反映の対象しよう**  
 ```
@@ -93,7 +111,7 @@ $ git log
 ---
 
 
-## *Lesson4 変更を元に戻す*  
+## *Lesson5 変更を元に戻す*  
 
 **ファイルを編集して新しい差分を作ろう**  
 ```
@@ -120,7 +138,7 @@ $ git log
 ---
 
 
-## *Lesson5 GitHubの設定する*  
+## *Lesson6 GitHubの設定する*  
 
 **ユーザ名・アドレス・URLを確認する**  
 ```
@@ -139,9 +157,9 @@ $ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHu
 ---
 
 
-## *Lesson6　remoteのRepositoriesに変更を反映させる*  
+## *Lesson7　remoteのRepositoriesに変更を反映させる*  
 
-**新しいファイルを反映の対象しよう**  
+**Repositoriesに新しいファイルを反映をしよう**  
 ```
 $ git push
 ```
@@ -149,9 +167,9 @@ $ git push
 ---
 
 
-## *Lesson7　新しいbranchを作る*  
+## *Lesson8　新しいbranchを作る*  
 
-GitHubの画面からbranchを作成する
+GitHubの画面から新branchを作成する
 
 **Localのbranchを確認しよう**  
 ```
@@ -166,24 +184,114 @@ $ git branch
 $ git branch -a
 ```
 
-
+**branchを切り替えよう** 
+```
+$ git checkout `新branch名`
+```
 
 ---
 
 
-## *Lesson8 新しいbranchに切り替えよう*  
+## *Lesson9 Localのファイルの衝突*  
 
+**同じ名前のファイルを作って衝突させる** 
 ```
+$ vi 同じ名前のファイルを作成
 $ git checkout `branch名`
 ```
+↑エラーが発生する
+
+
+**新branchを作り衝突回避** 
+```
+$ git add `ファイル名`
+$ git commit
+$ git checkout `branch名`
+```
+↑エラーは起きなくなる。
+
+**強制的にチェックアウトする** 
+もう一度エラーが起こる状態を作る
+```
+$ git checkout `branch(A)` 
+$ vi ファイル作成
+$ git add `ファイル名`
+$ git commit
+$ git push
+```
+
+同名のファイルを作り衝突を確認
+```
+$ git checkout `branch(B)` 
+$ vi 同名のファイル作成
+$ vi 別名のファイル作成
+$ git checkout `branch(A)` 
+```
+↑エラーが発生する
+
+
+同名のファイルを作り衝突を確認
+```
+$ git checkout -f `branch(A)` 
+```
+↑上書きされる。
+
 
 
 ---
 
+## *Lesson10 リモートでコンフリクトを起こす*  
 
-## *Lesson9*  
+**同じ名前のファイルを作って衝突させる** 
+```
+$ git checkout master
+```
+國島が変更を行うので確認する  
+・ファイル名  
+・変更箇所  
 
-### **プルリクを出そう** 
-GitHubの画面からPullRequestをだす
 
+同じ場所に別の修正を入れて衝突させるpush拒否される
+```
+$ vi ファイル名
+$ git add `ファイル名`
+$ git commit 
+$ git push
+```
+
+コンフリクトを起こす
+```
+$ git pull
+```
+↑コンフリクトが発生する  
+
+
+コンフリクトを解決する  
+```
+$ vi ファイル名
+$ git push
+```
+
+---
+
+## *Lesson11 mergeをする*  
+
+branchをmergeする
+```
+$ git checkout `branch(A)`
+$ git merge `branch(B)`
+$ ls -l
+```
+
+
+---
+
+## *Lesson12 プルリクを送る*  
+
+![Lesson12_1](Lesson12_1.png)
+「New pull request」を押します。    
+
+![Lesson12_2](Lesson12_2.png)
+どのブランチをどのブランチにマージするかを選択   
+「Create pull request」を押下で作成完了です。   
 
