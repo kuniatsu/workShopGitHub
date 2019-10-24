@@ -93,6 +93,27 @@ repository
 ```
 ---
 
+
+## *Lesson3 diff(差分)を確認する*  
+
+**master.mdを変更して差分を確認する**  
+git管理されているmaster.mdに編集をして差分を見てみましょう。  
+```
+$ git diff
+```
+
+---
+
+
+## *Lesson4 ファイルを確認する*  
+
+**`名前`.mdを変更して差分を確認する**  
+git管理されているmaster.mdに編集をして差分を見てみましょう。  
+```
+$ git diff
+```
+
+
 ## *Lesson3 branchを切り替える*  
 
 **Localのbranchを確認しよう**  
