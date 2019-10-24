@@ -39,14 +39,61 @@ $ git --version
 ## *Lesson1 GitHubからRepositoriesをClone*  
 
 **講座用のRepositoriesをCloneしよう**  
-[講座のテキストページ](https://github.com/kuniatsu/workShop) から自分のbranchのURLを調べる
+[講座のテキストページ](https://github.com/kuniatsu/workShopGitHub) から自分のbranchのURLを調べる
 ```
 $ git clone `URL`
 ```
 
 
+
+
 ---
-## *Lesson2 branchを切り替える*  
+
+
+## *Lesson2 branchの状態確認方法*  
+変更のない状態のメッセージを見ておきましょう。  
+
+**差分がないことを確認しよう**   
+```
+$ git diff
+```
+何も表示されない  
+
+**branchに差分のあるファイルがないことを確認しよう**  
+```
+$ git status
+
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+```
+
+**branchのlogを確認してみよう**  
+```
+$ git log
+```
+これまでのlogを表示。  
+ENTERキーでスクロール  
+qキーを押して終了  
+
+**repositoryのbrnachを確認してみよう**  
+```
+$ git branch
+```
+今作られているbranchを確認  
+masterだけ表示される
+
+
+
+```
+repository
+└── branch
+    └── file
+        └── diff(差分)
+```
+---
+
+## *Lesson3 branchを切り替える*  
 
 **Localのbranchを確認しよう**  
 ```
@@ -61,30 +108,6 @@ $ git branch
 ```
 
 ---
-
-
-## *Lesson3 Repositoriesの状態を確認*  
-
-**差分のあるファイルがないことを確認しよう**  
-```
-$ git status
-```
-
-**新しくファイルを追加して変化をみよう**  
-```
-$ git status
-```
-
-**作ったファイルを編集して変化をみよう**  
-```
-$ git diff
-$ git status
-```
-
-
-
----
-
 
 ## *Lesson4 LocalのRepositoriesに変更を反映させる*  
 
