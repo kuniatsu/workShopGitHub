@@ -91,6 +91,9 @@ repository
     └── file
         └── diff(差分)
 ```
+各階層毎にgitを使った管理を行なっていきます。
+
+
 ---
 
 
@@ -101,73 +104,102 @@ git管理されているmaster.mdに編集をして差分を見てみましょ�
 ```
 $ git diff
 ```
+先頭に-が付いている行は変更前   
+先頭に+が付いている行は変更後   
+になります。
+
+
+**ファイルを追加して差分を確認する**  
+差分のあるファイルを見てみましょう。   
+```
+$ git status
+```
+変化のあったファイルが表示される   
+
+
+```
+repository
+└── branch
+    └── file           ←どのファイルに変更があったのか？
+        └── diff(差分)　←どの行に変更があったのか？
+```
+
 
 ---
 
 
 ## *Lesson4 ファイルを確認する*  
 
-**`名前`.mdを変更して差分を確認する**  
-git管理されているmaster.mdに編集をして差分を見てみましょう。  
+**ファイルを追加して差分を確認する**  
+git管理されているフォルダにファイルを追加して差分を見てみましょう。 
+textファイルやフォルダを適当に作ってみてください。    
 ```
-$ git diff
+$ git status
 ```
+新しく追加したファイルも確認できる。
 
 
-## *Lesson3 branchを切り替える*  
+```
+repository
+└── branch
+    └── 新ファイル (file)  ←どのファイルに変更があったのか？
+    └── master.md(file)  ←どのファイルに変更があったのか？
+        └── diff(差分)　
+```
 
-**Localのbranchを確認しよう**  
-```
-$ git branch
-$ git branch -a
-```
-
-**branchを変更しよう**  
-```
-$ git checkout `branch名`
-$ git branch
-```
 
 ---
+## *Lesson5 branchに変更を確定させる*  
 
-## *Lesson4 LocalのRepositoriesに変更を反映させる*  
-
-**新しいファイルを反映の対象しよう**  
+**確定するファイルを選択しよう**  
 ```
+$ git status
 $ git add `ファイル名`
 $ git status
 ```
+git statusで出てくるファイル名をaddで選択すれば、   
+変更を確定する対象のファイルになります。　　  
+これを　`「indexする」` と言います。　　
+addした後に、git statusをすると、  
+文字が緑色になっています。  
+これはindexされたということです。   
+
 
 **新しいファイルを反映しよう**  
 ```
-$ git commit
-* コメントを書く
+$ git commit　-m "変更内容のコメント"
 $ git status
 ```
+変更内容のコメントの部分には、  
+どんな変更をしたかわかるコメントを書いてください。    
+このコメントがgit logで表示されるコメントになります。   
+変更が確定するとstatusでは表示されなくなります。   
+
 
 
 **commitの履歴を確認しよう**  
 ```
 $ git log
 ```
+反映が終わったら、   
+logを確認します。   
+先ほど書いたコメントが確認できれば成功です。   
+
+
+
+```
+repository
+└── branch             ←今使用しているbranchに変更がされる。
+    └── file           ←選択したファイルの変更が確定される。
+        └── diff(差分)　
+```
+
+
 
 
 ---
+## *Lesson6 変更を元に戻す*  
 
-
-## *Lesson5 変更を元に戻す*  
-
-**ファイルを編集して新しい差分を作ろう**  
-```
-$ git diff
-$ git status
-$ git add `ファイル名`
-$ git status
-$ git commit
-* コメントを書く
-$ git status
-$ git log
-```
 
 **rollbackしよう**  
 ```
@@ -176,13 +208,27 @@ $ git log
 $ git reset --hard `commitのID`
 $ git log
 ```
+branchを元に戻します。    
+自分が変更を加える前の状態に戻してみましょう。  
+logにある`commit c87e9e246dff692d2b53585a6c548067e8d37f89`  
+の 「c87e9e246dff692d2b53585a6c548067e8d37f89」の部分がIDです。  
+branchを変更前に戻したら、  
+ファイルが戻っているか確認しましょう。   
+
+```
+repository
+└── branch             
+    └── file(変更前) ← file(変更後)  ※以前のcommitした状態に戻ります。
+```
 
 
 
 ---
 
 
-## *Lesson6 GitHubの設定する*  
+
+
+## *Lesson8 GitHubの設定する*  
 
 **ユーザ名・アドレス・URLを確認する**  
 ```
@@ -201,25 +247,20 @@ $ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHu
 ---
 
 
-## *Lesson7　remoteのRepositoriesに変更を反映させる*  
-
-**Repositoriesに新しいファイルを反映をしよう**  
-```
-$ git push
-```
-
----
-
-
-## *Lesson8　新しいbranchを作る*  
+## *Lesson9　新しいbranchを作る*  
 
 GitHubの画面から新branchを作成する
+
 
 **Localのbranchを確認しよう**  
 ```
 $ git branch
 $ git branch -a
 ```
+-a の時に赤文字で表示されるbranchは、  
+リモートリポジトリにはあるけど、  
+ローカルリポジトリにはないbranchです。 
+
 
 **branchの情報を更新しよう**  
 ```
@@ -227,103 +268,142 @@ $ git fetch
 $ git branch
 $ git branch -a
 ```
+git fetchでリポジトリの情報をリモートリポジトリと同期することができる。   
 
-**branchを切り替えよう** 
 ```
-$ git checkout `新branch名`
+リモートrepository
+└── master(branch)             
+└── `名前`(branch)    ←新しくbranchを作成 
+└── .
+└── ..
+└── ...
+...
+　        
+
 ```
+
+---
+## *Lesson10 branchを切り替える*  
+
+
+**branchを変更しよう**  
+```
+$ git checkout `branch名`
+$ git branch
+```
+
+リモートリポジトリのbranchをcheckoutすることで、  
+ローカルリポジトリに持ってくることができます。   
+現在使用しているbranchは git branchをした際に*が付いているブランチになります。   
+
+
+```
+ローカルrepository
+└── master(branch)             
+└── `名前`(branch)    ←こちらのブランチに変更         
+
+```
+
+
 
 ---
 
 
-## *Lesson9 Localのファイルの衝突*  
-
-**同じ名前のファイルを作って衝突させる** 
-```
-$ vi 同じ名前のファイルを作成
-$ git checkout `branch名`
-```
-↑エラーが発生する
 
 
-**新branchを作り衝突回避** 
-```
-$ git add `ファイル名`
-$ git commit
-$ git checkout `branch名`
-```
-↑エラーは起きなくなる。
+## *Lesson11　remoteのRepositoriesに変更を反映させる*  
 
-**強制的にチェックアウトする** 
-もう一度エラーが起こる状態を作る
+**Repositoriesに新しい変更を反映をしよう**  
+
+ファイルになんらかの変更を加えておく。   
 ```
-$ git checkout `branch(A)` 
-$ vi ファイル作成
-$ git add `ファイル名`
-$ git commit
+$ git add `変更したファイル`
+$ git commit -m "変更内容のメモ"
 $ git push
 ```
-
-同名のファイルを作り衝突を確認
-```
-$ git checkout `branch(B)` 
-$ vi 同名のファイル作成
-$ vi 別名のファイル作成
-$ git checkout `branch(A)` 
-```
-↑エラーが発生する
-
-
-同名のファイルを作り衝突を確認
-```
-$ git checkout -f `branch(A)` 
-```
-↑上書きされる。
-
+pushが完了したらGithub上も変更しているか確認してみよう。
 
 
 ---
 
-## *Lesson10 リモートでコンフリクトを起こす*  
+## *Lesson12 branchごとにファイルを管理*  
+
+**master_branchに切り替える**  
+
+```
+$ git checkout master
+```
+名前branchの変更やlogがなくなっている事を確認   
+
+```
+ローカルrepository
+└── master(branch)   ←変更が入っていない。          
+└── `名前`(branch)    ←先ほどの変更が入っている           
+```
+
+---
+## *Lesson13 Localのファイルの衝突*  
+
+**同じ変更を作って衝突させる** 
+
+```
+＊ Lesson11で名前branchに下変更と同じ場所に変更を加える
+$ git checkout 自分のbranch
+```
+加えた変更が消えてしまうためgitが変更を守る。  
+
+
+**強制的にチェックアウトする** 
+
+```
+$ git checkout -f `名前branch` 
+```
+fはforceの略で強制的にcheckoutさせるという事  
+強制的にbranchを変えるので、確定させていない変更はなくなってしまう。
+上書きがされる。   
+
+---
+
+## *Lesson14 リモートでコンフリクトを起こす*  
 
 **同じ名前のファイルを作って衝突させる** 
 ```
-$ git checkout master
+$ git checkout 名前branch
 ```
 國島が変更を行うので確認する  
 ・ファイル名  
 ・変更箇所  
 
 
-同じ場所に別の修正を入れて衝突させるpush拒否される
+同じ場所に別の修正を入れて衝突させる
 ```
-$ vi ファイル名
 $ git add `ファイル名`
-$ git commit 
+$ git commit -m "なんらかコメント"
 $ git push
 ```
+push拒否される
 
-コンフリクトを起こす
+
 ```
 $ git pull
+$ git status
 ```
-↑コンフリクトが発生する  
+↑コンフリクトが発生するので解決する
 
 
-コンフリクトを解決する  
 ```
-$ vi ファイル名
 $ git push
 ```
+pushに成功する。
 
 ---
 
-## *Lesson11 mergeをする*  
+## *Lesson15 mergeをする*  
 
 branchをmergeする
 ```
-$ git checkout `branch(A)`
-$ git merge `branch(B)`
+$ git checkout `名前branch`
+$ git merge master
 $ ls -l
 ```
 
