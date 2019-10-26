@@ -23,7 +23,7 @@ $ git --version
 ```
 をコマンド
 `git version 0.00.0`
-というようにバー
+というようにバージョンが表示される。   
 
 
 
@@ -39,7 +39,7 @@ $ git --version
 ## *Lesson1 GitHubからRepositoriesをClone*  
 
 **講座用のRepositoriesをCloneしよう**  
-[講座のテキストページ](https://github.com/kuniatsu/workShopGitHub) から自分のbranchのURLを調べる
+[講座のテキストページ](https://github.com/kuniatsu/workShopGitHub) からURLを調べる
 ```
 $ git clone `URL`
 ```
