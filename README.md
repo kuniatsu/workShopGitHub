@@ -364,31 +364,28 @@ fはforceの略で強制的にcheckoutさせるという事
 
 ---
 
-## *Lesson14 リモートでコンフリクトを起こす*  
+## *Lesson14 リモートでリジェクト＆コンフリクトを起こす*  
 
-**同じ名前のファイルを作って衝突させる** 
+**同じファイルを編集して衝突させる** 
 ```
 $ git checkout 名前branch
 ```
-國島が変更を行うので確認する  
-・ファイル名  
-・変更箇所  
+くにしまが変更を行うので確認する  
 
-
-同じ場所に別の修正を入れて衝突させる
+同じ箇所に別の修正を入れて衝突させる
 ```
 $ git add `ファイル名`
 $ git commit -m "なんらかコメント"
 $ git push
 ```
-push拒否される
+push拒否される　`リジェクト` 
 
 
 ```
 $ git pull
 $ git status
 ```
-↑コンフリクトが発生するので解決する
+↑`コンフリクト` が発生するので解決する
 
 
 ```
@@ -396,21 +393,10 @@ $ git push
 ```
 pushに成功する。
 
----
-
-## *Lesson15 mergeをする*  
-
-branchをmergeする
-```
-$ git checkout `名前branch`
-$ git merge master
-$ ls -l
-```
-
 
 ---
 
-## *Lesson12 プルリクを送る*  
+## *Lesson15 プルリクを送る*  
 
 ![Lesson12_1](Lesson12_1.png)
 「New pull request」を押します。    
