@@ -1,3 +1,1 @@
-﻿aaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-aaaaaaaaaaaaaaaaaこのファイルを編集
-ddddd
+aaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
