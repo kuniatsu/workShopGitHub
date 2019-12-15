@@ -1,2 +1,2 @@
-﻿このファイルを編集
+﻿aaaaaaaaaaaaaaaaaこのファイルを編集
 ddddd
