@@ -1,2 +1,1 @@
-﻿aaaaaaaaaaaaaaaaaこのファイルを編集
-ddddd
+﻿勝手に変えてごめんなさい。
