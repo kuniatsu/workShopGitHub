@@ -53,13 +53,15 @@ $ git clone `URL`
 ## *Lesson2 branchの状態確認方法*  
 変更のない状態のメッセージを見ておきましょう。  
 
-**差分がないことを確認しよう**   
+**文章に編集(差分)がないことを確認しよう**   
 ```
 $ git diff
 ```
-何も表示されない  
+何も表示されない!  
+Lesson3で文章を編集してどのような変化が現れるかを確認します!!   
 
-**branchに差分のあるファイルがないことを確認しよう**  
+
+**branchに変更(差分)のあるファイルがないことを確認しよう**  
 ```
 $ git status
 
@@ -67,6 +69,11 @@ On branch master
 Your branch is up-to-date with 'origin/master'.
 nothing to commit, working tree clean
 ```
+`nothing to commit`が目印  
+Lesson4・5でfileの追加や変更があるとどのような変化があるかを確認しましょう  
+
+
+
 
 **branchのlogを確認してみよう**  
 ```
@@ -75,23 +82,36 @@ $ git log
 これまでのlogを表示。  
 ENTERキーでスクロール  
 qキーを押して終了  
+Lesson5で自分で加えた変更のlogが追加されます。  
+
+
+
 
 **repositoryのbrnachを確認してみよう**  
 ```
 $ git branch
 ```
 今作られているbranchを確認  
-masterだけ表示される
-
+masterだけ表示される  
+Lesson9で新しいbranchを作り表示の変化を確認しましょう。  
 
 
 ```
-repository
-└── branch
-    └── file
+repository(workShopGitHub)
+└── branch(master)
+    └── file(master.md, README.md)
         └── diff(差分)
 ```
 各階層毎にgitを使った管理を行なっていきます。
+
+
+
+
+
+
+
+
+
 
 
 ---
@@ -109,6 +129,7 @@ $ git diff
 になります。
 
 
+
 **ファイルを追加して差分を確認する**  
 差分のあるファイルを見てみましょう。   
 ```
@@ -120,9 +141,15 @@ $ git status
 ```
 repository
 └── branch
-    └── file           ←どのファイルに変更があったのか？
-        └── diff(差分)　←どの行に変更があったのか？
+    └── file           ←どのファイルに変更があったのか？(git status)
+        └── diff(差分)　←どの行に変更があったのか？(git diff)
 ```
+
+
+
+
+
+
 
 
 ---
@@ -165,7 +192,7 @@ addした後に、git statusをすると、
 これはindexされたということです。   
 
 
-**新しいファイルを反映しよう**  
+**新しいファイルを確定しよう**  
 ```
 $ git commit　-m "変更内容のコメント"
 $ git status
@@ -244,12 +271,14 @@ $ git config user.email `GitHubのアドレス`
 $ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHub.git`
 ```
 
+
+
+
+
+
 ---
-
-
 ## *Lesson9　新しいbranchを作る*  
-
-GitHubの画面から新branchを作成する
+GitHubの画面から新branchを作成する  
 
 
 **Localのbranchを確認しよう**  
@@ -270,6 +299,8 @@ $ git branch -a
 ```
 git fetchでリポジトリの情報をリモートリポジトリと同期することができる。   
 
+
+
 ```
 リモートrepository
 └── master(branch)             
@@ -281,6 +312,11 @@ git fetchでリポジトリの情報をリモートリポジトリと同期す�
 　        
 
 ```
+
+
+
+
+
 
 ---
 ## *Lesson10 branchを切り替える*  
