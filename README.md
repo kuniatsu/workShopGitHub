@@ -153,8 +153,6 @@ repository
 
 
 ---
-
-
 ## *Lesson4 ファイルを確認する*  
 
 **ファイルを追加して差分を確認する**  
@@ -174,9 +172,29 @@ repository
         └── diff(差分)　
 ```
 
+---
+## *Lesson5 GitHubの設定する*  
+
+**ユーザ名・アドレス・URLを確認する**  
+```
+$ git config user.name
+$ git config user.email
+$ git remote -v
+```
+
+**ユーザ名・アドレス・URLを登録する**  
+```
+$ git config user.name `GitHubのユーザ名`
+$ git config user.email `GitHubのアドレス`
+$ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHub.git`
+```
+
+
+
+
 
 ---
-## *Lesson5 branchに変更を確定させる*  
+## *Lesson6 branchに変更を確定させる*  
 
 **確定するファイルを選択しよう**  
 ```
@@ -225,7 +243,7 @@ repository
 
 
 ---
-## *Lesson6 変更を元に戻す*  
+## *Lesson7 変更を元に戻す*  
 
 
 **rollbackしよう**  
@@ -250,34 +268,9 @@ repository
 
 
 
----
-
-
-
-
-## *Lesson8 GitHubの設定する*  
-
-**ユーザ名・アドレス・URLを確認する**  
-```
-$ git config user.name
-$ git config user.email
-$ git remote -v
-```
-
-**ユーザ名・アドレス・URLを登録する**  
-```
-$ git config user.name `GitHubのユーザ名`
-$ git config user.email `GitHubのアドレス`
-$ git remote add origin `https://ユーザ名@github.com/kuniatsu/workShopoGitHub.git`
-```
-
-
-
-
-
 
 ---
-## *Lesson9　新しいbranchを作る*  
+## *Lesson8　新しいbranchを作る*  
 GitHubの画面から新branchを作成する  
 
 
@@ -319,7 +312,7 @@ git fetchでリポジトリの情報をリモートリポジトリと同期す�
 
 
 ---
-## *Lesson10 branchを切り替える*  
+## *Lesson9 branchを切り替える*  
 
 
 **branchを変更しよう**  
@@ -347,7 +340,7 @@ $ git branch
 
 
 
-## *Lesson11　remoteのRepositoriesに変更を反映させる*  
+## *Lesson10　remoteのRepositoriesに変更を反映させる*  
 
 **Repositoriesに新しい変更を反映をしよう**  
 
@@ -362,7 +355,7 @@ pushが完了したらGithub上も変更しているか確認してみよう。
 
 ---
 
-## *Lesson12 branchごとにファイルを管理*  
+## *Lesson11 branchごとにファイルを管理*  
 
 **master_branchに切り替える**  
 
@@ -378,7 +371,7 @@ $ git checkout master
 ```
 
 ---
-## *Lesson13 Localのファイルの衝突*  
+## *Lesson12 Localのファイルの衝突*  
 
 **同じ変更を作って衝突させる** 
 
@@ -400,7 +393,7 @@ fはforceの略で強制的にcheckoutさせるという事
 
 ---
 
-## *Lesson14 リモートでリジェクト＆コンフリクトを起こす*  
+## *Lesson13 リモートでリジェクト＆コンフリクトを起こす*  
 
 **同じファイルを編集して衝突させる** 
 ```
@@ -432,7 +425,7 @@ pushに成功する。
 
 ---
 
-## *Lesson15 プルリクを送る*  
+## *おまけ プルリクを送る*  
 
 ![Lesson12_1](Lesson12_1.png)
 「New pull request」を押します。    
