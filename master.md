@@ -1,1 +1,2 @@
 ﻿あいうえおYusukeiyoda
+さしすせ
