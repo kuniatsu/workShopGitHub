@@ -1,1 +1,1 @@
-angang
+nanka kakuzo!
