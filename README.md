@@ -70,7 +70,7 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working tree clean
 ```
 `nothing to commit`が目印  
-Lesson4・5でfileの追加や変更があるとどのような変化があるかを確認しましょう  
+Lesson4でfileの追加や変更があるとどのような変化があるかを確認しましょう  
 
 
 
